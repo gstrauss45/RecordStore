@@ -1,0 +1,14 @@
+= form_with model: @song do |form|
+    = form.label :title
+    = form.text_field :title
+    br
+    = form.label :duration
+    = form.number_field :duration
+    br
+    = form.label :album
+    = form.select :album_id, album_select
+    br
+    = form.label :hit_song
+    = form.check_box :hit_song
+    br
+    = form.submit

@@ -1,0 +1,22 @@
+.header
+  .header_content
+    |  Picked for you
+.songs_box
+  .header_content
+    | Songs
+  - @your_songs.each do |song|
+    = link_to song.title, song
+    |  by
+    = link_to song.album.artist.name, song.album.artist
+    br
+    |from
+    = link_to song.album.title, song.album
+    | duration :
+    = song.duration
+    br
+br
+= link_to "New Song", new_song_path
+br
+= link_to "New Album", new_album_path
+br
+= link_to "New Artist", new_artist_path

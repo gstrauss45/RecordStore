@@ -1,0 +1,19 @@
+.header
+    .header_content
+        = params[:param1]
+|Albums:
+br
+- @albums.each do |album|
+    = album.title
+    | :
+    br
+    - album.songs.each do |song|
+        .songs_box
+            = song.title
+            | :
+            = song.duration
+            | :
+            = link_to song.album.artist.name, song.album.artist
+            | :
+            = link_to song.album.title, song.album
+            br

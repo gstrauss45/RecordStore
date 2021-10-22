@@ -1,0 +1,13 @@
+.header
+    = @albums.first.title
+- @albums.each do |album|
+    - album.songs.each do |song|
+        = song.title
+        | :
+        = song.duration
+        | :
+        = link_to song.album.artist.name, song.album.artist
+        | :
+        = link_to song.album.title, song.album
+        | :
+        br

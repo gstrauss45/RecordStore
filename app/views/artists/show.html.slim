@@ -1,0 +1,19 @@
+.header
+    .header_content
+        = @artist.name
+.songs_box
+    | Albums:
+    br
+    - @albums.each do |album|
+        = album.first
+        | :
+        = Time.at(album.second).utc.strftime("%M:%S")
+        | :
+        = album.last
+        br
+br
+.songs_box
+    | Hit Songs:
+    - @hit_songs.each do |hit_song|
+        br
+        = hit_song.title

@@ -1,0 +1,17 @@
+.header
+    .header_content
+        = @album.title
+    .header_content_secondary
+        = link_to @album.artist.name, @album.artist
+    .header_content_tertiary
+        = link_to @album.genre, genre_path(param1: @album.genre)
+    .header_content_tertiary
+        = link_to @year, year_path(param1: @album.release_date)
+.songs_box
+  .header_content
+    | Songs
+  - @album.songs.each do |song|
+    = link_to song.title, song
+    | :
+    = Time.at(song.duration).utc.strftime("%M:%S")
+    br

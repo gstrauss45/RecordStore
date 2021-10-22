@@ -1,0 +1,12 @@
+= form_with model: @artist do |form|
+    = form.label :name
+    = form.text_field :name
+    br
+    = form.label :artist_enum
+    / = form.select :form.type
+    = form.select :artist_enum, Artist.artist_enums.keys.map { |types| [types.humanize, types] }
+    br
+    = form.label :debut_year
+    = form.text_field :debut_year
+    <br>
+    = form.submit

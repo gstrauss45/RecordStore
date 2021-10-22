@@ -1,0 +1,14 @@
+= form_with model: @album do |form|
+    = form.label :title
+    = form.text_field :title
+    br
+    = form.label :release_date
+    = datetime_select(:album, :release_date)
+    br
+    = form.label :genre
+    = form.text_field :genre
+    <br>
+    = form.label 'artist'
+    = form.select :artist_id, artist_select
+    <br>
+    = form.submit
